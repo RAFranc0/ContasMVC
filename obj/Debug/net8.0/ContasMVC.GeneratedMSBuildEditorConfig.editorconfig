@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Raul\Desktop\dotnet\ContasMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Raul/Desktop/dotnet/ContasMVC/Views/Despesas/AdicionarDespesa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzcGVzYXNcQWRpY2lvbmFyRGVzcGVzYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Raul/Desktop/dotnet/ContasMVC/Views/Despesas/ListarDespesas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzcGVzYXNcTGlzdGFyRGVzcGVzYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Raul/Desktop/dotnet/ContasMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -156,3 +156,4 @@ C:\Users\Raul\Desktop\dotnet\ContasMVC\obj\Debug\net8.0\refint\ContasMVC.dll
 C:\Users\Raul\Desktop\dotnet\ContasMVC\obj\Debug\net8.0\ContasMVC.pdb
 C:\Users\Raul\Desktop\dotnet\ContasMVC\obj\Debug\net8.0\ContasMVC.genruntimeconfig.cache
 C:\Users\Raul\Desktop\dotnet\ContasMVC\obj\Debug\net8.0\ref\ContasMVC.dll
+C:\Users\Raul\Desktop\dotnet\ContasMVC\obj\Debug\net8.0\ContasMVC.sourcelink.json

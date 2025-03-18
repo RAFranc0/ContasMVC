@@ -18,14 +18,18 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Início</a></li>
+                            <li><a class="dropdown-item" href="#">Visão geral</a></li>
+                            <li><a class="dropdown-item" asp-controller="Despesas" asp-action="AdicionarDespesa">Adicionar despesa</a></li>
+                            <li><a class="dropdown-item" href="#">Adicionar receita</a></li>
+                            <li><a class="dropdown-item" asp-controller="Despesas" asp-action="Listar">Listar despesas</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>

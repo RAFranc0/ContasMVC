@@ -1,0 +1,43 @@
+@model DespesaModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <form method="post" asp-controller="Despesas" asp-action="Adicionar">
+        <div class="mb-3">
+            <label class="form-label">Valor</label>
+            <input class="form-control" type="text" asp-for="Valor">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Categoria</label>
+            <select class="form-select" asp-for="Categoria">
+                <option selected>Selecione a categoria</option>
+                <option value="Casa">Casa</option>
+                <option value="Cartao">Cartão</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <select class="form-select" asp-for="Tipo">
+                <option selected>Individual ou compartilhada?</option>
+                <option value="Individual">Individual</option>
+                <option value="Compartilhada">Compartilhada</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Frequência</label>
+            <select class="form-select" asp-for="Frequencia">
+                <option selected>Conta fixa ou esporádica?</option>
+                <option value="Fixa">Fixa</option>
+                <option value="Esporadica">Esporádica</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Data</label>
+            <input class="form-control" type="text" placeholder="@DateTime.UtcNow" asp-for="Data" disabled>
+        </div>
+        <button class="btn btn-dark" type="submit">Adicionar</button>
+    </form>
+</div>

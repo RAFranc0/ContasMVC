@@ -1,0 +1,27 @@
+@model List<DespesaModel>
+
+<div class="container">
+    <table class="table table-hover text-center align-middle">
+        <thead>
+        <tr>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Tipo</th>
+            <th>Frequência</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var despesa in Model)
+        {
+            <tr>
+                <td>@despesa.Valor</td>
+                <td>@despesa.Categoria</td>
+                <td>@despesa.Tipo</td>
+                <td>@despesa.Frequencia</td>
+                <td>@despesa.Data</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
