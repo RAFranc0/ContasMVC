@@ -1,3 +1,4 @@
+@using System.Globalization
 @model List<DespesaModel>
 
 <div class="container">
@@ -9,17 +10,25 @@
             <th>Tipo</th>
             <th>Frequência</th>
             <th>Data</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var despesa in Model)
         {
             <tr>
-                <td>@despesa.Valor</td>
+                <td>@despesa.Valor.ToString("C")</td>
                 <td>@despesa.Categoria</td>
                 <td>@despesa.Tipo</td>
                 <td>@despesa.Frequencia</td>
-                <td>@despesa.Data</td>
+                <td>@despesa.Data.ToString("d")</td>
+                <td>
+                    <form method="post" asp-controller="Despesas" asp-action="Remover">
+                        <input type="hidden" name="Id" value="@despesa.Id"/>
+                        <button class="btn btn-outline-danger" type="submit"
+                                onclick="return confirm('Você irá deletar a despesa no valor de @despesa.Valor.ToString("C")!')">X</button>
+                    </form>
+                </td>
             </tr>
         }
         </tbody>

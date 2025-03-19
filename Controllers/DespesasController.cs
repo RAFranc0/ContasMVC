@@ -28,9 +28,11 @@ public class DespesasController : Controller
             return RedirectToAction("Adicionar");
         }
 
+        despesa.Data = DateTime.UtcNow;
+
         _contasdb.Despesas.Add(despesa);
         await _contasdb.SaveChangesAsync();
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Listar");
     }
 
     [HttpGet]
@@ -38,5 +40,25 @@ public class DespesasController : Controller
     {
         var listaDeDespesas = await _contasdb.Despesas.ToListAsync();
         return View("ListarDespesas", listaDeDespesas);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Remover(Guid? Id)
+    {
+        if (Id == null)
+        {
+            return NotFound();
+        }
+
+        var despesa = await _contasdb.Despesas.FindAsync(Id);
+        if (despesa == null)
+        {
+            return NotFound();
+        }
+
+        _contasdb.Despesas.Remove(despesa);
+        await _contasdb.SaveChangesAsync();
+
+        return RedirectToAction("Listar");
     }
 }

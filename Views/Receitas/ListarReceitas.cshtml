@@ -1,0 +1,28 @@
+@using System.Globalization
+@model List<ReceitaModel>
+
+@{
+    ViewData["Title"] = "Lista de Receitas";
+}
+
+<div class="container">
+    <table class="table table-hover text-center align-middle">
+        <thead>
+        <tr>
+            <td>Valor</td>
+            <td>Usuario</td>
+            <td>Tipo</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var receitas in Model)
+        {
+            <tr>
+                <td>@receitas.Valor.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))</td>
+                <td>@receitas.Usuario</td>
+                <td>@receitas.Tipo</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,6 +1,6 @@
 @model DespesaModel;
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Adicionar Despesa";
 }
 
 <div class="container">
@@ -36,7 +36,8 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Data</label>
-            <input class="form-control" type="text" placeholder="@DateTime.UtcNow" asp-for="Data" disabled>
+            <input class="form-control" type="text" placeholder="@DateTime.UtcNow" disabled>
+            <input type="hidden" asp-for="Data" value="@DateTime.UtcNow">
         </div>
         <button class="btn btn-dark" type="submit">Adicionar</button>
     </form>
