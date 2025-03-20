@@ -1,31 +1,33 @@
 using System.Diagnostics;
+using ContasMVC.Data;
 using Microsoft.AspNetCore.Mvc;
 using ContasMVC.Models;
+using ContasMVC.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContasMVC.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ContasDbContext _contasdb;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ContasDbContext contasdb)
     {
-        _logger = logger;
+        _contasdb = contasdb;
     }
-
-    public IActionResult Index()
+    
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var visaoGeral = new VisaoGeralViewModel();
+        
+        visaoGeral.VisaoGeralDespesas = await _contasdb.Despesas.ToListAsync();
+        visaoGeral.VisaoGeralReceitas = await _contasdb.Receitas.ToListAsync();
+        
+        return View(visaoGeral);
     }
 
     public IActionResult Privacy()
     {
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

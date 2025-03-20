@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#index-vg-despesas{
+  width: 60%;
+}
+
+#index-vg-receitas {
+  width: 35%;
+}
